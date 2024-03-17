@@ -72,7 +72,7 @@ app.use(
 
 const httpServer = createServer(app);
 
-const io = new Server(httpServer);
+// const io = new Server(httpServer);
 
 messageHandler(io);
 const server = app.listen(process.env.PORT || 8080, () => {
@@ -120,3 +120,7 @@ app.use("/api/auth", PassportAuthRoute);
 app.get("/", (req, res) => {
   res.send("hello");
 });
+
+// Socket IO
+const io = new Server(server);
+socket(io);
