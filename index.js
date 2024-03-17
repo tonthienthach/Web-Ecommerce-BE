@@ -75,10 +75,13 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 messageHandler(io);
-
-httpServer.listen(process.env.PORT, () => {
-  console.log(`app is running on port ${process.env.PORT}`);
+const server = app.listen(process.env.PORT || 8080, () => {
+  console.log(`API listening on PORT ${process.env.PORT} `);
 });
+
+// httpServer.listen(process.env.PORT, () => {
+//   console.log(`app is running on port ${process.env.PORT}`);
+// });
 
 app.use("/api/brand", brandRouter);
 
