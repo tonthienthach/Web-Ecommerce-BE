@@ -74,7 +74,7 @@ const httpServer = createServer(app);
 
 // const io = new Server(httpServer);
 
-messageHandler(io);
+// messageHandler(io);
 const server = app.listen(process.env.PORT || 8080, () => {
   console.log(`API listening on PORT ${process.env.PORT} `);
 });
