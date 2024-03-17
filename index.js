@@ -123,4 +123,4 @@ app.get("/", (req, res) => {
 
 // Socket IO
 const io = new Server(server);
-socket(io);
+messageHandler(io);
